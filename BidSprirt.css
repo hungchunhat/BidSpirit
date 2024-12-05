@@ -11,6 +11,7 @@ body {
   background-image: url('background.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -18,6 +19,7 @@ body {
   padding: 6em 4em;
   height: 100vh;
   overflow-x: hidden;
+
 }
 
 /* Navbar */
@@ -25,11 +27,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 10px;
   background: rgba(0, 0, 0, 0.6);
   height: 80px;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
 }
@@ -45,10 +48,12 @@ body {
   justify-content: center;
   align-items: center;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .menu ul li {
-  margin-left: 20px;
+  margin: 0 10px;
 }
 
 .menu ul li a {
@@ -61,6 +66,88 @@ body {
 .menu ul li a:hover {
   color: #ff7200;
 }
+
+/*Seach*/
+.search-container {
+  position: relative;
+  width: 290px;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 50%;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-icon svg {
+  fill: #fff;
+}
+
+.search-icon:hover {
+  background-color: #555;
+}
+
+.search-bar:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 200%;
+  border-radius: 100px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  transition: all 0.5s ease;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: -1;
+}
+
+.search-bar:hover + .glow {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.search-bar:focus-within + .glow {
+  transform: translate(-50%, -50%) scale(1.2);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+}
+
 
 /* Header */
 header {
@@ -125,7 +212,7 @@ form#Search button:hover {
 
 /* Footer */
 #footer {
-  position: relative;
+  /*position: relative;*/
   text-align: center;
   margin-top: auto;
   padding: 20px 0;
