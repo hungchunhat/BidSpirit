@@ -12,6 +12,7 @@ body {
     height: 100vh; /* Đặt chiều cao toàn màn hình */
     background-image: url("background.jpg"); /* Đường dẫn đến ảnh nền */
     background-size: cover; /* Ảnh nền bao phủ toàn bộ */
+    background-repeat: no-repeat;
     background-position: center;
     display: flex;
     flex-direction: column; /*a Hưng sửa cho e Tiến đoạn này */
