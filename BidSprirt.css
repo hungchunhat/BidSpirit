@@ -8,19 +8,17 @@
 /* General Styling */
 body {
   font-family: 'Roboto', sans-serif;
-  background-image: url('background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 6em 4em;
-  height: 100vh;
-  overflow-x: hidden;
+    margin: 0;
+    height: 100vh; /* Đặt chiều cao toàn màn hình */
+    background-image: url('background.jpg'); /* Đường dẫn đến ảnh nền */
+    background-size: cover; /* Ảnh nền bao phủ toàn bộ */
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
+
 
 /* Navbar */
 .navbar {
@@ -28,13 +26,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
-  background: rgba(0, 0, 0, 0.6);
+  background-color: black;
   height: 80px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
 }
 
 .logo {
@@ -69,8 +66,8 @@ body {
 
 /*Seach*/
 .search-container {
-  position: relative;
   width: 290px;
+  display: inline-block;
 }
 
 .search-bar {
@@ -210,30 +207,157 @@ form#Search button:hover {
   color: #ff7200;
 }
 
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(255, 100, 0, 0.7), rgba(255, 150, 50, 0.8)), url('background-image.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  background: #ff7200;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hero-btn:hover {
+  background: #fff;
+  color: #ff7200;
+  transition: 0.3s;
+}
+
+/* Service Section */
+.services {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 20px;
+  background: #ff7200;
+  color: #fff;
+}
+
+.service-card {
+  text-align: center;
+  width: 20%;
+  padding: 20px;
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service-card i {
+  font-size: 2rem;
+  color: #ff7200;
+  margin-bottom: 10px;
+}
+
+.service-card h3 {
+  margin: 10px 0;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+}
+
+/* Auction Section */
+.auction {
+  background: #000;
+  color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.auction h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.auction-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.auction-card {
+  width: 200px;
+  height: 250px;
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 /* Footer */
 #footer {
   /*position: relative;*/
-  text-align: center;
+  text-align: bottom;
   margin-top: auto;
   padding: 20px 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: black;
+  list-style: none;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+#footer .icons {
+  display: flex; /* Dùng flexbox để các mục nằm trên một dòng */
+  justify-content: center; /* Căn giữa các biểu tượng */
+  list-style: none; /* Xóa dấu chấm của danh sách */
+  padding: 0;
+  margin: 0;
+}
+
+#footer .icons li {
+  margin: 0 10px; /* Tạo khoảng cách ngang giữa các biểu tượng */
 }
 
 #footer .icons a {
-  margin: 0 10px;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 1.2em;
-  transition: color 0.3s ease;
+  color: rgba(255, 255, 255, 0.6); /* Màu mặc định */
+  font-size: 1.5em; /* Kích thước biểu tượng */
+  text-decoration: none; /* Xóa gạch chân */
+  transition: color 0.3s ease; /* Hiệu ứng mượt khi hover */
 }
 
 #footer .icons a:hover {
-  color: #ff7200;
+  color: #ff7200; /* Màu cam khi hover */
 }
 
 #footer .copyright {
   margin-top: 10px;
   font-size: 0.8em;
   color: rgba(255, 255, 255, 0.6);
+  display: center;
 }
 
 @media (max-width: 768px) {
