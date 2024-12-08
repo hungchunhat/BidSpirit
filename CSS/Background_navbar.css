@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url('../IMAGE/background.jpg');
+    background-size: none;
+}
+
 /* Navbar 
 .navbar {
     display: flex;
