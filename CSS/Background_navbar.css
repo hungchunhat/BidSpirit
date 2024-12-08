@@ -75,24 +75,24 @@ body {
     color: #ff7200;
 }
 
-menu ul.sub-menu {
+.menu ul.sub-menu {
     position: absolute;
-    background-color: #000;
+    background-color: #ffffff;
     padding: 15px 0px;
     list-style: none;
     width: 200px;
 }
 
-menu ul.l.sub-menu a{
+.menu ul.l.sub-menu a{
     padding: 8px 15px;
     border-bottom: 1px solid black;
 }
 
-menu ul.l.sub-menu li:hover a {
+.menu ul.l.sub-menu li:hover a {
     border-bottom: 1px solid white;
 }
 
-menu ul.l.sub-menu li:last-child a {
+.menu ul.l.sub-menu li:last-child a {
     border: none;
 }
 
