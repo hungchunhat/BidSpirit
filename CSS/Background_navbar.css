@@ -1,98 +1,124 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     background-image: url('../IMAGE/background.jpg');
-    background-size: none;
+    background-size: 1920px 660px;
+    background-repeat:no-repeat;
+    background-position: top center;
+    min-height: 660px;
+    -webkit-font-smoothing: auto;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
 }
 
-/* Navbar 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    background-color: black;
-    height: 50px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: normal;
+    font-feature-settings: normal;
+    font-family: Inter, SF Pro Text, Roboto, Helvetica Neue, Helvetica, Tahoma, Arial, PingFang SC, Microsoft YaHei;
+    font-variation-settings: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    margin: 0;
+    padding: 0
+}
+
+.container {
+    max-width: 1930px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
     
 }
-*/
-.container {
-    max-width: 960px;
-    margin: 0px auto;
+
+#header {
+    background-color: rgb(255, 255, 255);
+   
 }
 
-.navbar {
-    background-color: #000;
-
-}
-
-.nav {
+nav {
     display: flex;
     justify-content: space-between;
     justify-items: center;
+    list-style: none;
 }
 
-
-.logo {
-    color: #ff7200;
-    font-size: 35px;
-    font-family: Arial, sans-serif;
+#logo img {
+    max-width: 400px;
+    height: auto;
+}
+#logo {
+    padding: 5px 0px;
 }
 
-.menu  {
+#main-menu  {
     display: flex;
     list-style: none;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
-.menu li {
+#main-menu li{
     position: relative;
 }
 
-.menu li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s ease;
+#main-menu li a {
+    color: #000000;
     display: block;
     padding: 18px 20px;
     text-decoration: none;
+    list-style: none;
 }
 
-.menu ul li a:hover {
-    color: #ff7200;
-}
-
-.menu ul.sub-menu {
+#main-menu ul.sub-menu {
     position: absolute;
     background-color: #ffffff;
     padding: 15px 0px;
     list-style: none;
     width: 200px;
+    left: 0px;
+    border: 1px solid black;
+    display: none;
 }
 
-.menu ul.l.sub-menu a{
+#main-menu li:hover>ul.sub-menu {
+    display: block;
+}
+
+#main-menu ul.sub-menu a{
     padding: 8px 15px;
     border-bottom: 1px solid black;
+    left: 0px;
 }
 
-.menu ul.l.sub-menu li:hover a {
-    border-bottom: 1px solid white;
+#main-menu ul.sub-menu li:hover>a {
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 
-.menu ul.l.sub-menu li:last-child a {
+#main-menu ul.sub-menu li:last-child a {
     border: none;
 }
 
+#main-menu ul.sub-menu ul.sub-menu {
+    left: 200px;
+    top: 15px;
+}
+
+/*Thiết lập border khi hover*/
+#main-menu>li>a{
+    position: relative;
+}
+#main-menu>li>a::before{
+    content: "";
+    height: 4px;
+    width: 100%;
+    background: yellow;
+    position: absolute;
+    bottom: 0px;
+    display: none;
+}
+#main-menu>li:hover>a::before{
+    display: block;
+    left: 0px;
+}
