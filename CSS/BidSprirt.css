@@ -1,3 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header and Navigation</title>
+    <link rel="stylesheet" href="demo.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <!-- Header and Searchbar -->
+    <div class="header-and-searchbar">
+        
+        <!-- Background Image -->
+        <div class="bg-img-div">
+            <div class="bg-img-inner">
+                <img src="background.jpg" alt="Background Image">
+            </div>
+        </div>
+        
+        <!-- Header Section -->
+        <header class="header-wrapper">
+            <div class="header-container">
+                
+                <!-- Logo -->
+                <div class="header-content">
+                    <div class="logo"></div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="nav-bar">
+                    
+                    <!-- Left Navigation -->
+                    <ul class="nav-left">
+                        <li>
+                            <a href="#" class="nav-item">All Auctions</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Upcoming Auction</a></li>
+                                <li><a href="#">Completed Auction</a></li>
+                                <li><a href="#">Sponsored Auction</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-item">Product</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">fine art</a></li>
+                                <li><a href="#">furniture </a></li>
+                                <li><a href="#">Đồ Phong Thủy</a></li>
+                                <li><a href="#">Đồ Long Đao</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-item">Featured Selections</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Tranh cổ</a></li>
+                                <li><a href="#">Đá cổ</a></li>
+                                <li><a href="#">Đồ Phong Thủy</a></li>
+                                <li><a href="#">Đồ Long Đao</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <!-- Right Navigation -->
+                    <ul class="nav-right">
+                        <li><a href="#" class="nav-item">Help Center</a></li>
+                        <li><a href="#" class="nav-item">Languages</a></li>
+                        <li><a href="#" class="nav-item">Feedback</a></li>
+                        <li><a href="#" class="nav-item">Become a Supplier</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+</body>
+</html>
 
 
 /*Seach*/
