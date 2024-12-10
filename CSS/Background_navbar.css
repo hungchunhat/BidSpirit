@@ -73,10 +73,11 @@ body {
 }
 
 .logo {
-    width: 185px;
-    height: 22px;
+    width: 241px;
+    height: 57px;
     background: url('../IMAGE/Logo.png');
     cursor: pointer;
+    background-repeat: no-repeat;
 }
 
 /* Navigation Bar */
@@ -311,10 +312,10 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 50px 0px;
+    padding: 50px 19px;
     background: #ff7200;
     color: #fff;
-    width: 100vw;
+    width: 104vw;
     height: 350px;
     margin-top: 0px;
 }
@@ -348,7 +349,7 @@ body {
 .auction {
     background: #000;
     color: #fff;
-    padding: 50px 20px;
+    padding: 50px 42px;
     text-align: center;
     width: 100vw;
 }
@@ -367,7 +368,7 @@ body {
 }
 
 .auction-card {
-    width: 200px;
+    width: 160px;
     height: 250px;
     background: #fff;
     color: #333;
@@ -389,7 +390,7 @@ body {
     width: 100%;
     text-align: bottom;
     margin-top: auto;
-    padding: 20px 0;
+    padding: 20px 50px;
     background: black;
     list-style: none;
  
@@ -422,7 +423,7 @@ body {
     margin-top: 10px;
     font-size: 0.8em;
     color: rgba(255, 255, 255, 0.6);
-    display: center;
+    text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -431,16 +432,25 @@ body {
     }
 
     header h1 {
-        font-size: 2.5em;
+        font-size: 2.2em;
     }
 
     form#Search input {
-        width: 250px;
+        width: 100%;
+        max-width: 250px;
     }
 }
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 2em;
+        font-size: 1.8em;
+    }
+
+    form#Search input {
+        width: 100%;
+    }
+
+    .menu ul {
+        padding: 0;
     }
 }
