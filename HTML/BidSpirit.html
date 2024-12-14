@@ -1,571 +1,246 @@
-/* General Styles */
-html {
-    -webkit-text-size-adjust: 100%;
-    font-family: Inter, SF Pro Text, Roboto, Helvetica Neue, Helvetica, Tahoma, Arial, PingFang SC, Microsoft YaHei;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    background-color: #ccc;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-
-/* Background Image */
-.bg-img-div {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-.Background1 {
-    height: 624px;
-    width: 100%;
-    position: absolute;
-}
-
-* Header and Searchbar Section */
-.header-and-searchbar {
-    height: 624px;
-    width: 100%;
-    position: absolute; /* Định vị tuyệt đối trong vùng chứa Background1 */
-    top: 0;
-    left: 0;
-    z-index: 5; /* Đảm bảo nó nằm trên ảnh nền */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white; /* Đảm bảo chữ dễ đọc trên nền */
-    padding: 20px;
-}
-
-/* Header Section */
-.header-wrapper {
-    height: 120px;
-    width: 100%;
-    background: transparent;
-    position: relative;
-    z-index: 10;
-    padding: 10px 0;
-    text-align: center;
-    color: white;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    max-width: 1580px;
-    margin: 0 auto;
-    padding: 0 40px;
-
-}
-
-.logo {
-    width: 241px;
-    height: 57px;
-    background: url('../IMAGE/logo3.png') no-repeat center;
-    background-size: contain;
-    cursor: pointer;
-}
-
-/* Visitor Count */
-.visitor-count {
-    position: absolute;
-
-left: 1px;
-    color: #fff;
-    font-size: 2.2em;
-    left: 440px;
-}
-
-/* From Search */ 
-.search-container {
-    flex-basis: 266px;
-    margin-left: 740px;
-}
-.search-bar {
-  --default-color: #9e9e9e;
-  --color-text: #ccc;
-  --color-active: #1a73e8;
-  --color-active-input: #f5f5f5;
-  --transition: 150ms cubic-bezier(0.4,0,0.2,1);
-  --width-input: 200px;
-}
-
-.search-group {
-  position: relative;
-}
-
-.input {
-  width: var(--width-input);
-  border: solid 1.5px var(--default-color);
-  border-radius: 80px;
-  background: none;
-  padding: 1rem;
-  padding-right: 3rem;
-  font-size: 1rem;
-  color: var(--color-active-input);
-  transition: border var(--transition);
-}
-
-.enter-label {
-  position: absolute;
-  left: 15px;
-  color: var(--default-color);
-  pointer-events: none;
-  transform: translateY(1rem);
-  transition: var(--transition);
-}
-
-.enter-label {
-  color: var(--default-color);
-  pointer-events: none;
-}
-
-.input:focus, input:valid {
-  outline: none;
-  border: 1.5px solid var(--color-active);
-}
-
-.input:focus ~ label, input:valid ~ label {
-  transform: translateY(-50%) scale(0.8);
-  background-color: var(--color-active);
-  border-radius: 20px;
-  padding: .2em .6em;
-  color: var(--color-text);
-}
-
-.btn-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: -1em;
-  right: 80%;
-  border-radius: 100%;
-  transition: 300ms cubic-bezier(0.4,0,0.2,1);
-  transition-delay: 100ms;
-  opacity: 0;
-}
-
-.input:focus ~ .btn-box, input:valid ~ .btn-box {
-  right: 10%;
-  opacity: 1;
-  transition-delay: 0s;
-  transition: var(--transition);
-}
-
-.input:not(:focus) ~ .btn-box, input:not(:valid) ~ .btn-box {
-  transition-property: right, opacity;
-  transition-delay: 300ms;
-}
-
-.input:focus ~ .btn-box:hover, input:valid ~ .btn-box:hover {
-  transform: scale(1.2);
-}
-
-.input:focus ~ .btn-box:hover:active, input:valid ~ .btn-box:hover:active {
-  transform: scale(1);
-}
-
-.btn-search {
-  position: relative;
-  cursor: pointer;
-  background-color: var(--color-active);
-  width: 2em;
-  height: 2em;
-  top: 2.5px;
-  border: none;
-  border-radius: 100%;
-  padding: 0;
-  transition: var(--transition);
-}
-
-.btn-search:active {
-  transform: scale(1);
-}
-
-.btn-search svg {
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  fill: var(--color-text);
-  width: 12px;
-  height: 12px;
-}
-
-#svg-circle {
-  fill: var(--color-text);
-  transition: var(--transition);
-}
-
-.input:focus ~ .btn-box:hover #svg-circle, input:valid ~ .btn-box:hover #svg-circle {
-  fill: transparent;
-}
-
-.btn-box-x {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 1em;
-  right: 7%;
-  opacity: 0;
-  transform: rotate(-90deg) scale(.1);
-  transition: var(--transition);
-}
-
-.input:focus ~ .btn-box-x, input:valid ~ .btn-box-x {
-  opacity: 1;
-  transform: rotate(0) scale(1);
-}
-
-.btn-cleare {
-  position: relative;
-  cursor: pointer;
-  background-color: transparent;
-  width: 2em;
-  height: 2em;
-  border: none;
-  border-radius: 100%;
-  padding: 0;
-  transition: var(--transition);
-}
-
-.btn-cleare svg {
-  width: 15px;
-  height: 15px;
-}
-
-#cleare-line {
-  fill: var(--default-color);
-}
-
-.btn-box-x:hover #cleare-line {
-  fill: var(--color-active);
-}
-
-.login {
-    display: flex; /* Sử dụng Flexbox để căn chỉnh các nút */
-    gap: 0px
-}
-
-.loginup, .loginin {
-    background: transparent;
-    position: relative;
-    padding: 5px 15px;
-    display: flex;
-    align-items: center;
-    font-size: 17px;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    border: 1px solid rgb(24, 119, 242);
-    border-radius: 25px;
-    outline: none;
-    overflow: hidden;
-    color: rgb(24, 119, 242);
-    transition: color 0.3s 0.1s ease-out;
-    text-align: center;
-}
-
-.loginup span, .loginin span {
-    margin: 10px;
-}
-
-.loginup::before, .loginin::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    content: "";
-    border-radius: 50%;
-    display: block;
-    width: 20em;
-    height: 20em;
-    left: -5em;
-    text-align: center;
-    transition: box-shadow 0.5s ease-out;
-    z-index: -1;
-}
-
-.loginup:hover, .loginin:hover {
-    color: #fff;
-    border: 1px solid rgb(24, 119, 242);
-}
-
-.loginup:hover::before, .loginin:hover::before {
-    box-shadow: inset 0 0 0 10em rgb(24, 119, 242);
-}
-
-/* Navigation Bar */
-.nav-bar {
-    max-width: 1580px;
-    margin: 0 40px;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    height: 36px;
-}
-
-.nav-left, .nav-right {
-    display: flex;
-    align-items: center;
-    list-style: none;
-}
-
-.nav-left li {
-    position: relative;
-}
-
-.nav-left li a {
-    color: #000;
-    display: block;
-    padding: 1rem 1.25rem;
-    text-decoration: none;
-}
-
-.nav-left ul.sub-menu {
-    position: absolute;
-    background-color: #fff;
-    padding: 10px 0;
-    list-style: none;
-    width: 200px;
-    left: 0;
-    border: 1px solid black;
-    display: none;
-    z-index: 10;
-}
-
-.nav-left li:hover > ul.sub-menu {
-    display: block;
-}
-
-.nav-left ul.sub-menu a {
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid black;
-}
-
-.nav-left ul.sub-menu li:last-child a {
-    border: none;
-}
-
-.nav-right li {
-    position: relative;
-}
-
-.nav-right li a {
-    color: #000;
-    display: block;
-    padding: 1rem 1.25rem;
-    text-decoration: none;
-}
-
-/* Header */
-#header {
-    position: relative;
-    text-align: left;
-    margin-top: 0px;
-    margin-left: 180px;
-    width: 1506px;
-    height: 365px;
-    padding: 40px 0;
-}
-
-.header-main {
-    font-size: 3.5em;
-    color: #000;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-    animation: fadeIn 2s ease-in-out;
-}
-
-.header-undermain {
-    color: rgba(0, 0, 0, 0.8);
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-top: 10px;
-    height: 65px;
-    width: 450px;
-}
-
-/* Form */
-#Search {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    gap: 10px;
-}
-
-#Search input {
-    border-radius: 20px;
-    border: 1px solid #ff7200;
-    padding: 10px 15px;
-    font-size: 16px;
-    width: 300px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    transition: all 0.3s ease-in-out;
-}
-
-#Search input:focus {
-    outline: none;
-    background-color: #fff;
-    color: #000;
-}
-
-#Search button {
-    background: #ff7200;
-    border: none;
-    border-radius: 20px;
-    color: #fff;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-#Search button:hover {
-    background: #fff;
-    color: #ff7200;
-}
-
-.services {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 50px 19px;
-    background: #ff7200;
-    color: #fff;
-    height: 350px;
-}
-
-.service-card {
-    text-align: center;
-    width: 20%;
-    padding: 20px;
-    background: #fff;
-    color: #333;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    height: 250px;
-}
-
-.service-card i {
-    font-size: 2rem;
-    color: #ff7200;
-    margin-bottom: 10px;
-}
-
-.service-card h3 {
-    margin: 10px 0;
-}
-
-.service-card p {
-    font-size: 0.9rem;
-}
-
-/* Auction Section */
-.auction {
-    background: #000;
-    color: #fff;
-    padding: 50px 42px;
-    text-align: center;
-    width: 95%;
-}
-
-.auction h2 {
-    margin-bottom: 30px;
-    font-size: 2rem;
-    text-transform: uppercase;
-}
-
-.auction-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.auction-card {
-    width: 160px;
-    height: 250px;
-    background: #fff;
-    color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* Footer */
-#footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 94%;
-    text-align: center;
-    padding: 20px 50px;
-    background: black;
-}
-
-#footer .icons {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#footer .icons li {
-    margin: 0 10px;
-}
-
-#footer .icons a {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 1.5em;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-#footer .icons a:hover {
-    color: #ff7200;
-}
-
-#footer .copyright {
-    margin-top: 10px;
-    font-size: 0.8em;
-    color: rgba(255, 255, 255, 0.6);
-    text-align: center;
-}
-
-main {
-    padding: 20px;
-}
-
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.product {
-    border: 1px solid #ccc;
-    margin: 10px;
-    padding: 10px;
-    cursor: pointer;
-    background-color: #fff;
-    transition: transform 0.2s;
-}
-
-.product:hover {
-    transform: scale(1.05);
-}
+<!DOCTYPE HTML>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>BidSpirit</title>
+    <link rel="stylesheet" href="../CSS/Background_navbar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">   
+</head>
+<body>
+    <!-- Header and Searchbar -->
+    <div class="header-and-searchbar">
+        <div class="bg-img-div">
+                <img class="Background1" src="../IMAGE/background.jpg" alt="Background Image">
+
+        
+        <header class="header-wrapper">
+            <div class="header-content">
+                <div id="logo" class="logo">
+                    <img src="../IMAGE/logo3.png" alt="Logo">
+                </div>
+                <div class="visitor-count" id="visitorCount">View: 0</div>
+                <div class="search-container">
+                    <div class="search-bar">
+                            <div class="search-group">
+                                <input required="" type="text" name="text" autocomplete="on" class="input">
+                                <label class="enter-label">Search</label>
+                                <div class="btn-box">
+                                    <button class="btn-search">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path><circle id="svg-circle" cx="208" cy="208" r="144"></circle></svg>
+                                    </button>
+                                </div>
+                                <div class="btn-box-x">
+                                    <button class="btn-cleare">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" id="cleare-line"></path></svg>
+                                    </button>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="login">
+                <button class="loginup">
+                    <svg viewBox="0 0 26 26" fill="currentColor" height="28" width="28" xmlns="http://www.w3.org/2000/svg"></svg>
+                    <span>Đăng Ký</span>
+                </button>
+                <button class="loginin">
+                    <svg viewBox="0 0 26 26" fill="currentColor" height="28" width="28" xmlns="http://www.w3.org/2000/svg"></svg>
+                    <span>Đăng Nhập</span>
+                </button>
+                </div>
+                </div>
+            </header>
+        
+    <nav class="nav-bar">
+        <ul class="nav-left">
+            <li>
+                <a href="#" class="nav-item">All Auctions</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Upcoming Auction</a></li>
+                    <li><a href="#">Completed Auction</a></li>
+                    <li><a href="#">Sponsored Auction</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="nav-item">Product</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Fine Art</a></li>
+                    <li><a href="#">Furniture</a></li>
+                    <li><a href="#">Đồ Phong Thủy</a></li>
+                    <li><a href="#">Đồ Long Đao</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="nav-item">Featured Selections</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Tranh cổ</a></li>
+                    <li><a href="#">Đá cổ</a></li>
+                    <li><a href="#">Đồ Phong Thủy</a></li>
+                    <li><a href="#">Đồ Long Đao</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav-right">
+            <li><a href="#" class="nav-item">Help</a></li>
+            <li><a href="#" class="nav-item">Languages</a></li>
+            <li><a href="#" class="nav-item">Feedback</a></li>
+            <li><a href="#" class="nav-item">Become a Supplier</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="header-container">
+    <header id="header">   
+        <h1 class="header-main">BidSpirit</h1>
+        <p class="header-undermain">Sàn giao dịch và đấu giá trực tuyến<br>Uy tín số 1 thế giới.</p>
+    
+
+    <form id="Search" method="post" action="/">
+        <input type="email" placeholder="Email Address" name="email" id="email" required />
+        <button id="button" class="animated-button">
+            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+            </svg>
+            <span class="text">Sign Up</span>
+        </button>
+    </form>
+</header>
+</div>
+</div>
+<section class="services">
+    <div class="service-card">
+        <i class="fas fa-shopping-cart"></i>
+        <h3>Các sản phẩm tại BidSpirit</h3>
+        <p>Sản phẩm đa dạng và phong phú</p>
+    </div>
+    <div class="service-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Đảm bảo chất lượng và giao dịch</h3>
+        <p>Chất lượng sản phẩm luôn được đảm bảo</p>
+    </div>
+    <div class="service-card">
+        <i class="fas fa-handshake"></i>
+        <h3>Tiện lợi trong đấu giá</h3>
+        <p>Dễ dàng tham gia đấu giá mọi lúc, mọi nơi</p>
+    </div>
+    <div class="service-card">
+        <i class="fas fa-star"></i>
+        <h3>Lợi ích tối đa từ sản phẩm BidSpirit</h3>
+        <p>Giá trị tuyệt vời dành cho khách hàng</p>
+    </div>
+</section>
+
+<section class="auction">
+    <h2>ĐẤU GIÁ HIỆN TẠI</h2>
+    <div class="auction-container">
+        <div class="auction-card">
+            <p>Thông tin sản phẩm đấu giá</p>
+        </div>
+        <div class="auction-card">
+            <p>Thông tin sản phẩm đấu giá</p>
+        </div>
+        <div class="auction-card">
+            <p>Thông tin sản phẩm đấu giá</p>
+        </div>
+        <div class="auction-card">
+            <p>Thông tin sản phẩm đấu giá</p>
+        </div>
+        <div class="auction-card">
+            <p>Thông tin sản phẩm đấu giá</p>
+        </div>
+        <div class="auction-card">
+            <p>Thông tin sản phẩm đấu giá</p>
+        </div>
+        <div class="auction-card">
+            <p>Thông tin sản phẩm đấu giá</p>
+        </div>
+    </div>
+</section>
+<main>
+    <section id="fine-art">
+        <h2>Nghệ thuật</h2>
+        <div class="product-list">
+            <div class="product" onclick="openProductDetails('Nghệ thuật 1', 'Mô tả nghệ thuật 1', 100)">
+                <img src="art1.jpg" alt="Nghệ thuật 1">
+                <p>Nghệ thuật 1 - Giá: 100$</p>
+            </div>
+            <!-- Thêm các sản phẩm khác -->
+        </div>
+    </section>
+
+    <section id="antiques">
+        <h2>Đồ cổ</h2>
+        <div class="product-list">
+            <div class="product" onclick="openProductDetails('Đồ cổ 1', 'Mô tả đồ cổ 1', 200)">
+                <img src="antique1.jpg" alt="Đồ cổ 1">
+                <p>Đồ cổ 1 - Giá: 200$</p>
+            </div>
+            <!-- Thêm các sản phẩm khác -->
+        </div>
+    </section>
+
+    <section id="furniture">
+        <h2>Nội thất</h2>
+        <div class="product-list">
+            <div class="product" onclick="openProductDetails('Nội thất 1', 'Mô tả nội thất 1', 300)">
+                <img src="furniture1.jpg" alt="Nội thất 1">
+                <p>Nội thất 1 - Giá: 300$</p>
+            </div>
+            <!-- Thêm các sản phẩm khác -->
+        </div>
+    </section>
+
+    <section id="collectibles">
+        <h2>Sưu tập</h2>
+        <div class="product-list">
+            <div class="product" onclick="openProductDetails('Sưu tập 1', 'Mô tả sưu tập 1', 150)">
+                <img src="collectible1.jpg" alt="Sưu tập 1">
+                <p>Sưu tập 1 - Giá: 150$</p>
+            </div>
+            <!-- Thêm các sản phẩm khác -->
+        </div>
+    </section>
+
+    <section id="feedback">
+        <h2>Phản hồi</h2>
+        <textarea id="feedbackInput" placeholder="Nhập phản hồi của bạn ở đây"></textarea>
+        <button id="submitFeedback">Gửi phản hồi</button>
+    </section>
+</main>
+
+<footer id="footer">
+    <ul class="icons">
+        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; 2024 BidSpirit.</li>
+        <li>Credits by: <a href="/">Team 3 Aptech</a></li>
+    </ul>
+</footer>
+
+</div>
+    <script>
+        // Đếm số lượt truy cập ```javascript
+        let visitorCount = 0;
+
+        function updateVisitorCount() {
+            visitorCount++;
+            document.getElementById('visitorCount').innerText = `Số lượt truy cập: ${visitorCount}`;
+        }
+
+        function greetUser () {
+            const firstName = document.getElementById('firstName').value;
+            if (firstName) {
+                document.getElementById('welcomeMessage').innerText = `Chào mừng, ${firstName}!`;
+            }
+        }
+
+        // Gọi hàm để cập nhật số lượt truy cập khi trang được tải
+        window.onload = updateVisitorCount;
+    </script>
+</body>
+</html>
