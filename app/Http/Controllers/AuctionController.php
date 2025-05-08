@@ -103,7 +103,7 @@ class AuctionController extends Controller
             'start_time' => request('start_time'),
             'end_time' => request('end_time'),
             'category' => request('category'),
-            'image' => str_replace('public/', '', $imagePath),
+            'image' => str_replace('public/', '', $imagePath),// tìm 'public' trong imagePath sau đó xóa đi
             'bid_step' => request('bid_step'),
         ]);
         return redirect()->route('auction.index');
@@ -184,8 +184,9 @@ class AuctionController extends Controller
         ]);
         $imagePath = $auction->image;
         if ($file = request()->file('image')) {
-            $imageName = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            $imagePath = $file->storeAs('/public/images', $imageName);
+//            $imageName = Str::random(20) . '.' . $file->getClientOriginalExtension();
+//            $imagePath = $file->storeAs('/public/images', $imageName);
+            $imagePath = $file->store('images');
         }
         $auction->update([
             'name' => request('name'),
@@ -193,7 +194,7 @@ class AuctionController extends Controller
             'start_time' => request('start_time'),
             'end_time' => request('end_time'),
             'category' => request('category'),
-            'image' => str_replace('public/', '', $imagePath),
+            'image' => $imagePath,
             'bid_step' => request('bid_step'),
         ]);
         return redirect()->route('auction.index');

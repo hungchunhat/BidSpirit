@@ -1,10 +1,10 @@
 <x-layout>
     @auth
-        <div style="background-color: #e03a3c;color: white;text-align: center">Hello {{Auth::user()->getAuthIdentifierName()}}</div>
+        <div style="background-color: #e03a3c;color: white;text-align: center">Hello {{Auth::user()->name}}</div>
     @endauth
     <!-- Hero Section -->
     <section id="hero" class="hero section">
-        <img src={{asset('storage/images/TheCreationofAdam.jpg')}} alt="" data-aos="fade-in">
+        <img src={{ asset('storage/images/TheCreationofAdam.jpg') }} alt="hehe" data-aos="fade-in">
 
         <div class="container">
             <div class="row">
@@ -139,7 +139,7 @@
                         <div>
                             <h4 class="title">
                                 <a class="stretched-link">
-                                Diverse Collections</a>
+                                    Diverse Collections</a>
                             </h4>
                             <p class="description">
                                 Explore a wide variety of items, including art, antiques,
@@ -751,7 +751,8 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <form id="feedback-form" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+                    <form id="feedback-form" method="post" class="php-email-form" data-aos="fade-up"
+                          data-aos-delay="500">
                         @csrf
                         <div class="row gy-4">
                             <div class="col-md-6">
@@ -767,7 +768,8 @@
                             </div>
 
                             <div class="col-md-12">
-                                <textarea class="form-control" name="content" rows="4" placeholder="Message" required=""></textarea>
+                                <textarea class="form-control" name="content" rows="4" placeholder="Message"
+                                          required=""></textarea>
                             </div>
 
                             <div class="col-md-12 text-center">

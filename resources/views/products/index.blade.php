@@ -70,7 +70,7 @@
 
         </div>
         <div class="container d-flex justify-content-center">
-            {{ $products->appends(request()->query())->link() }}
+            {{ $products->appends(request()->query())->links() }}
         </div>
     </section>
 </x-layout>

@@ -51,7 +51,7 @@
             @endif
         </div>
         <div class="container d-flex justify-content-center">
-            {{ $auctions->links() }}
+            {{ $auctions->appends(request()->query())->links() }}
         </div>
     </section>
 </x-layout>
