@@ -25,7 +25,6 @@ class LoginController extends Controller
         if (!Auth::attempt($validated)) {
             throw ValidationException::withMessages([
                 'email' => ['No sorry, The provided email are incorrect.'],
-                'password' => ['No sorry, The provided password are incorrect.']
             ]);
         };
         //regenerate the session token
@@ -37,7 +36,6 @@ class LoginController extends Controller
     public function destroy()
     {
         Auth::logout();
-        request()->session()->invalidate();
         request()->session()->regenerateToken();
         return redirect('/');
     }

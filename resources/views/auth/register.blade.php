@@ -12,12 +12,21 @@
             <div class="row gy-4">
                 <div class="col-md-12">
                     <input type="text" name="name" class="form-control" placeholder="Full name" required="">
+                    @error('name')
+                    <span class="text-danger" style="font-size: 12px">{{$message}}</span>
+                    @enderror
                 </div>
                 <div class="col-md-12">
                     <input type="text" name="email" class="form-control" placeholder="Email address" required="">
+                    @error('email')
+                    <span class="text-danger" style="font-size: 12px">{{$message}}</span>
+                    @enderror
                 </div>
                 <div class="col-md-12 ">
                     <input type="password" class="form-control" name="password" placeholder="Password" required="">
+                    @error('password')
+                    <span class="text-danger" style="font-size: 12px">{{$message}}</span>
+                    @enderror
                 </div>
                 <div class="col-md-12 ">
                     <input type="password" class="form-control" name="password_confirmation" placeholder="Password confirmation" required="">
