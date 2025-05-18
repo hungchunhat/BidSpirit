@@ -60,14 +60,13 @@ class ProductController extends Controller
         ],['price.min' => 'Price must be at least 1']);
         $imagePath = null;
         if ($file = request()->file('image')) {
-            $imageName = Str::random(20) . '.' . $file->getClientOriginalExtension(); // VD: abc123xyz456.jpg
-            $imagePath = $file->storeAs('/public/images', $imageName);
+            $imagePath = $file->store('images');
         }
         $product = Product::create([
             'name' => request('name'),
             'description' => request('description'),
             'price' => request('price'),
-            'image' => str_replace('public/', '', $imagePath),
+            'image' => $imagePath,
             'category_id' => request('category_id'),
         ]);
         Auth::user()->product()->attach($product->id, ['action_type' => 'own']);
@@ -105,14 +104,14 @@ class ProductController extends Controller
         ],['price.min' => 'Price must be at least 1']);
         $imagePath = $product->image;
         if ($file = request()->file('image')) {
-            $imageName = Str::random(20) . '.' . $file->getClientOriginalExtension(); // VD: abc123xyz456.jpg
-            $imagePath = $file->storeAs('/public/images', $imageName);
+//            $imageName = Str::random(20) . '.' . $file->getClientOriginalExtension(); // VD: abc123xyz456.jpg
+            $imagePath = $file->store('images');
         }
         $product->update([
             'name' => request('name'),
             'description' => request('description'),
             'price' => request('price'),
-            'image' => str_replace('public/', '', $imagePath),
+            'image' => $imagePath,
             'category_id' => request('category_id'),
         ]);
         return redirect()->route('product.index');

@@ -24,7 +24,7 @@ class LoginController extends Controller
         //attempt to log in the user
         if (!Auth::attempt($validated)) {
             throw ValidationException::withMessages([
-                'email' => ['No sorry, The provided email are incorrect.'],
+                'email' => ['No sorry, Incorrect Email or password.'],
             ]);
         };
         //regenerate the session token

@@ -53,7 +53,9 @@
 
                 <!-- Preview Image Section -->
                 <div class="mb-3">
-                    <div id="image-preview" class="mt-2"></div>
+                    <div class="mt-2 d-flex justify-content-center">
+                        <img src ="" id="image-preview" alt="" style="display: none"/>
+                    </div>
                 </div>
 
                 <!-- Submit Button -->
@@ -63,25 +65,16 @@
     </section>
     <x-slot:script>
         <script type="module">
-            document.getElementById('image').addEventListener('change', function (event) {
-                const imagePreview = document.getElementById('image-preview');
-                imagePreview.innerHTML = "";
-
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-
-                    reader.onload = function (e) {
-                        const img = document.createElement('img');
-                        img.src = e.target.result;
-                        img.alt = "Preview Image";
-                        img.style.maxWidth = "100%";
-                        img.style.height = "auto";
-                        imagePreview.appendChild(img);
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
+            document.addEventListener("DOMContentLoaded", () => {
+                const imageUpload = document.getElementById("image");
+                imageUpload.addEventListener("change", (e) => {
+                    const imgURL = URL.createObjectURL(e.target.files[0]);
+                    const imagePreview = document.getElementById("image-preview");
+                    imagePreview.src = imgURL;
+                    imagePreview.style.display = "block";
+                    imagePreview.style.maxWidth = "300px";
+                });
+            })
         </script>
     </x-slot:script>
 </x-layout>

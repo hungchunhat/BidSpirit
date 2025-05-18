@@ -28,10 +28,10 @@ class AuctionController extends Controller
         }
         $auctions = $query
             ->orderByRaw('CASE
-                                WHEN status = "live"
-                                THEN 1 WHEN status = "upcoming"
-                                THEN 2 WHEN status = "ended"
-                                THEN 3 ELSE 4 END'
+                                WHEN status = "live" THEN 1
+                                WHEN status = "upcoming" THEN 2
+                                WHEN status = "ended" THEN 3
+                                ELSE 4 END'
             )->simplePaginate(8);
         return view('auctions.index', [
             'auctions' => $auctions,
@@ -94,8 +94,7 @@ class AuctionController extends Controller
         ]);
         $imagePath = null;
         if ($file = request()->file('image')) {
-            $imageName = Str::random(20) . '.' . $file->getClientOriginalExtension(); // VD: abc123xyz456.jpg
-            $imagePath = $file->storeAs('/public/images', $imageName);
+            $imagePath = $file->store('images');
         }
         Auction::create([
             'name' => request('name'),
@@ -103,7 +102,7 @@ class AuctionController extends Controller
             'start_time' => request('start_time'),
             'end_time' => request('end_time'),
             'category' => request('category'),
-            'image' => str_replace('public/', '', $imagePath),// tìm 'public' trong imagePath sau đó xóa đi
+            'image' => $imagePath,
             'bid_step' => request('bid_step'),
         ]);
         return redirect()->route('auction.index');
@@ -115,7 +114,9 @@ class AuctionController extends Controller
             'auction_id' => 'required|integer|exists:auctions,id'
         ]);
         Auction::destroy(request('auction_id'));
-        return 'hehe';
+        return response()->json([
+            'message' => 'Auction deleted successfully'
+        ]);
     }
 
     public function endAuction(Auction $auction)
